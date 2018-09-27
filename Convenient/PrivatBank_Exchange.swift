@@ -62,7 +62,7 @@ class PrivatBank_Exchange: UITableViewController {
 		
 		fillTable()
 		
-		// дергалка за которую дергаешь а оно обновляется! хопа!
+		// дергалка-обновлялка
 		refreshControl = UIRefreshControl()
 		refreshControl?.backgroundColor = firmColor
 		refreshControl?.tintColor = .white
