@@ -68,6 +68,11 @@ class PrivatBank_Exchange: UITableViewController {
 		refreshControl?.tintColor = .white
 		refreshControl?.addTarget(self, action: #selector(refreshControlUpdate), for: UIControlEvents.valueChanged)
 		
+		if #available(iOS 11.0, *) {
+			refreshControl?.backgroundColor = .clear
+			refreshControl?.tintColor = firmColor
+		}
+		
 	}
 	
 	
@@ -100,8 +105,6 @@ class PrivatBank_Exchange: UITableViewController {
 
 	@objc private func refreshControlUpdate(){
 		current_course = []
-		tableView.reloadData()
-		
 		fillTable()
 	}
 
@@ -150,7 +153,12 @@ class PrivatBank_Exchange: UITableViewController {
     }
 
 
-	
+	override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+		if section == 0 {
+			return "Потяните вниз для обновления данных"
+		}
+		return ""
+	}
 	
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

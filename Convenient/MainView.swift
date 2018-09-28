@@ -22,7 +22,7 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		super.viewDidLoad()
 	
 		MainView.selF = self
-//		menuTable.tableFooterView = UIView()
+		title = "ЯП!"
 	
 		if #available(iOS 11.0, *) {
 			navigationController?.navigationBar.prefersLargeTitles = true
@@ -38,14 +38,14 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		if section == 0 {
-			return "Секция 1"
+			return "Меню"
 		}
 		return "Секция 2"
 	}
 	
 	func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
 		if section == 0 {
-			return "Описание для секции 1"
+			return model.description
 		}
 		return "Описание для секции 2"
 	}

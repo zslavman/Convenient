@@ -20,10 +20,9 @@ struct PhotoData:Decodable {
 	var isActive	:Bool?
 	var city		:String?
 	var geo			:[Geo]
-//	var geo			:[Dictionary<String, Any>]
+	var reserv		:String? // тут будет подсчитанная инфа
 	
-	
-	
+
 //	enum CustomerKeys: CodingKey {
 //		case view, description, album_name, city
 //		case index, order
@@ -85,6 +84,31 @@ class JsonTable: UITableViewController {
 			(responseArray) in
 			self.dataToFillingCells = responseArray as! [PhotoData]
 			
+			// сортировка
+//			self.dataToFillingCells = self.dataToFillingCells.sorted(by: { (a, b) -> Bool in
+//				// числовые сортировки
+//				return a.index! < b.index! // прямая
+//				// return a.index! > b.index! // обратная
+//
+//				// строковые сортировки
+//				// return a.city!.compare(b.city!) == .orderedAscending // прямая
+//				// return a.city!.compare(b.city!) == .orderedDescending // обратная
+//			})
+			self.dataToFillingCells = self.dataToFillingCells.sorted(by: { $0.index! < $1.index! })
+			
+
+			// заполняем вычисленный по координатам город и страну
+//			for var mItem in self.dataToFillingCells{
+//				self.geoTagging(CLLocationDegrees(mItem.geo[0].latitude ?? 0), CLLocationDegrees(mItem.geo[0].longitude ?? 0)){
+//					(value) in
+//					mItem.reserv = value
+//
+//					DispatchQueue.main.async {
+//						self.tableView.reloadData()
+//					}
+//				}
+//			}
+			
 			DispatchQueue.main.async {
 				self.tableView.reloadData()
 			}
@@ -119,7 +143,7 @@ class JsonTable: UITableViewController {
 		let image1 = cell.viewWithTag(5) as! UIImageView
 		image1.image = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1).image(CGSize(width: image1.frame.width, height: image1.frame.height))
 		
-		// картинка карты, где сделана фотка
+		// картинка карты
 		let image2 = cell.viewWithTag(6) as! UIImageView
 		image2.image = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1).image(CGSize(width: image2.frame.width, height: image2.frame.height))
 
@@ -128,13 +152,15 @@ class JsonTable: UITableViewController {
 		let lon = String(format: "%.4f", dataToFillingCells[indexPath.row].geo[0].longitude ?? 0)
 		
 		let label5_TF = cell.viewWithTag(7) as! UILabel
-		label5_TF.text = "lat: " + lat + " lon: " + lon
+		label5_TF.text = "Lat: " + lat + " Lon: " + lon
 		
-		geoTagging(CLLocationDegrees(lat)!, CLLocationDegrees(lon)!)
+		// страна и город, вычесленные по координатам
+		let label6_TF = cell.viewWithTag(8) as! UILabel
+		label6_TF.text = dataToFillingCells[indexPath.row].reserv
 		
-		
-        return cell
-    }
+		return cell
+	}
+	
 	
 
 	
@@ -144,7 +170,7 @@ class JsonTable: UITableViewController {
 	
 	
 	/// Геошняжки
-	private func geoTagging(_ lat:CLLocationDegrees, _ lon:CLLocationDegrees){
+	private func geoTagging(_ lat:CLLocationDegrees, _ lon:CLLocationDegrees, complition: @escaping(String) -> Void) {
 		
 		let geocoder = CLGeocoder()
 		
@@ -154,73 +180,43 @@ class JsonTable: UITableViewController {
 			guard error == nil else { return }
 			
 			var placemark:CLPlacemark!
+			var addressString: String = ""
 			
 			if let placeMarksArr = placeMarksArr {
+				
 				if placeMarksArr.count > 0 {
 					placemark = placeMarksArr[0] as CLPlacemark
 				}
 				
-				var addressString : String = ""
+				// print("isoCountryCode = \(placemark.isoCountryCode ?? "no country code")") // UA
 				
-				if placemark.isoCountryCode == "TW" /*Address Format in Chinese*/ {
-					if placemark.country != nil {
-						addressString = placemark.country!
-					}
-					if placemark.subAdministrativeArea != nil {
-						addressString = addressString + placemark.subAdministrativeArea! + ", "
-					}
-					if placemark.postalCode != nil {
-						addressString = addressString + placemark.postalCode! + " "
-					}
-					if placemark.locality != nil {
-						addressString = addressString + placemark.locality!
-					}
-					if placemark.thoroughfare != nil {
-						addressString = addressString + placemark.thoroughfare!
-					}
-					if placemark.subThoroughfare != nil {
-						addressString = addressString + placemark.subThoroughfare!
-					}
-				}
-				else {
-					if placemark.subThoroughfare != nil {
-						addressString = placemark.subThoroughfare! + " "
-					}
-					if placemark.thoroughfare != nil {
-						addressString = addressString + placemark.thoroughfare! + ", "
-					}
-					if placemark.postalCode != nil {
-						addressString = addressString + placemark.postalCode! + " "
-					}
-					if placemark.locality != nil {
-						addressString = addressString + placemark.locality! + ", "
-					}
-					if placemark.administrativeArea != nil {
-						addressString = addressString + placemark.administrativeArea! + " "
-					}
-					if placemark.country != nil {
-						addressString = addressString + placemark.country!
-					}
-				}
 				
+				// if placemark.subThoroughfare != nil {
+				// 		addressString = placemark.subThoroughfare! + " "
+				// }
+				// if placemark.thoroughfare != nil {
+				// 		addressString += placemark.thoroughfare! + ", "
+				// }
+				//	if placemark.postalCode != nil {
+				//		addressString += placemark.postalCode! + " "
+				//	}
+				//	if placemark.locality != nil {
+				//		addressString += placemark.locality! + ", "
+				//	}
+				if placemark.administrativeArea != nil {
+					addressString += placemark.administrativeArea! + ", "
+				}
+				if placemark.country != nil {
+					addressString += placemark.country!
+				}
+				// if placemark.subAdministrativeArea != nil {
+				// 		addressString += placemark.subAdministrativeArea! + ", "
+				// }
 				print(addressString)
-				
+				complition(addressString)
 			}
-			
-			
-			
-			
-			
-			print(placeMarksArr ?? "no City for coords")
 		}
-		
-		
-		
-		
-		
 	}
-	
-	
 	
 	
 	

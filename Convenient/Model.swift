@@ -12,13 +12,13 @@ import Foundation
 class Model {
 	
 	
-	
 	enum menuItems: String {
-		case JSON		= "get JSON"
+		case JSON		= "JSON фотоальбома"
 		case PRIVAT		= "ПриватБанк курс"
 		case GALLERY	= "Gallery"
-
 	}
+
+	public let description:String = "В меню tableView собраны различные тестовые подпрограммы:\n\(menuItems.JSON.rawValue) - получение JSONки с моего сайта и парсинг ее; \n\(menuItems.PRIVAT.rawValue) - JSONкa курса валют ПриватБанка"
 	
 	
 	public let menuArr:Array<String> = [

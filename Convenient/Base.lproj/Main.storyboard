@@ -162,15 +162,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="YRo-1Y-mLg">
-                                            <rect key="frame" x="101" y="27" width="117" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/FileName/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="g8G-Qe-ohB">
-                                            <rect key="frame" x="101" y="43" width="117" height="14"/>
+                                            <rect key="frame" x="101" y="26" width="117" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.73784066609729937" green="0.73331829600467058" blue="0.75678055323147209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -184,19 +177,38 @@
                                                 <constraint firstAttribute="height" constant="55" id="IDi-Q5-PXs"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lat: 48.1256 lon:12.3659" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="t0v-oQ-p6J">
-                                            <rect key="frame" x="176" y="67" width="128" height="14"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lat: 48.1256 lon:12.3659" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="t0v-oQ-p6J">
+                                            <rect key="frame" x="197" y="70" width="107" height="11"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="11" id="dd8-Nn-oco"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="lF9-Pb-udy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <color key="textColor" red="0.73784066609999999" green="0.73331829599999998" blue="0.75678055320000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(City)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="HMe-T9-3oP">
+                                            <rect key="frame" x="101" y="54" width="124" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.73784066609999999" green="0.73331829599999998" blue="0.75678055320000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="YRo-1Y-mLg">
+                                            <rect key="frame" x="102" y="40" width="124" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="t0v-oQ-p6J" secondAttribute="trailing" constant="16" id="2lr-mQ-fFh"/>
                                         <constraint firstItem="SUM-Km-Rti" firstAttribute="leading" secondItem="u5b-6S-Ksa" secondAttribute="leading" constant="16" id="Q6s-KL-ii2"/>
                                         <constraint firstItem="7wY-YE-6HU" firstAttribute="top" secondItem="u5b-6S-Ksa" secondAttribute="top" constant="11" id="fMx-5N-ESM"/>
                                         <constraint firstItem="SUM-Km-Rti" firstAttribute="top" secondItem="u5b-6S-Ksa" secondAttribute="top" constant="11" id="fsv-uj-dbC"/>
                                         <constraint firstAttribute="trailing" secondItem="7wY-YE-6HU" secondAttribute="trailing" constant="16" id="nVI-j3-yw3"/>
+                                        <constraint firstAttribute="bottom" secondItem="t0v-oQ-p6J" secondAttribute="bottom" constant="8.5" id="pnL-EF-eHa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
