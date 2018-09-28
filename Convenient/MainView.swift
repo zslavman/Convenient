@@ -26,7 +26,10 @@ class MainView: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 		if #available(iOS 11.0, *) {
 			navigationController?.navigationBar.prefersLargeTitles = true
+			navigationItem.largeTitleDisplayMode = .automatic
 		}
+		// если возвращатся свайпом вправо, то полезно это
+		self.extendedLayoutIncludesOpaqueBars = true
 	}
 	
 	

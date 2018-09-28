@@ -50,14 +50,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qX7-Xf-k2o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8HA-wy-ohD"/>
-                            <constraint firstItem="qX7-Xf-k2o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="L9y-yS-Yab"/>
-                            <constraint firstItem="qX7-Xf-k2o" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wla-wG-tUy"/>
-                            <constraint firstItem="qX7-Xf-k2o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="taf-59-jbd"/>
+                            <constraint firstItem="qX7-Xf-k2o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7qT-Kv-50M"/>
+                            <constraint firstItem="qX7-Xf-k2o" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BQE-fk-EEv"/>
+                            <constraint firstItem="qX7-Xf-k2o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xzn-Yb-Ukv"/>
+                            <constraint firstItem="qX7-Xf-k2o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kzS-xQ-qGc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome!" leftItemsSupplementBackButton="YES" id="v27-iE-nyQ"/>
+                    <navigationItem key="navigationItem" title="Welcome!" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="v27-iE-nyQ"/>
                     <connections>
                         <outlet property="menuTable" destination="qX7-Xf-k2o" id="ECX-cS-zdq"/>
                         <segue destination="Ky4-8H-Hik" kind="show" identifier="segue_in_JsonTable" id="qjT-dz-wYc"/>
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="-581"/>
+            <point key="canvasLocation" x="1207.5" y="-582.04225352112678"/>
         </scene>
         <!--Privat Bank Exchange-->
         <scene sceneID="Oag-ke-r4e">
@@ -140,7 +140,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUM-Km-Rti">
+                                        <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUM-Km-Rti">
                                             <rect key="frame" x="16" y="11" width="70" height="55"/>
                                             <color key="backgroundColor" red="0.94901960780000005" green="0.90980392160000001" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -156,30 +156,47 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="YKR-1w-Oi2">
-                                            <rect key="frame" x="101" y="11" width="203" height="21"/>
+                                            <rect key="frame" x="101" y="11" width="117" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="YRo-1Y-mLg">
-                                            <rect key="frame" x="101" y="31" width="203" height="21"/>
+                                            <rect key="frame" x="101" y="27" width="117" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/FileName/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="g8G-Qe-ohB">
-                                            <rect key="frame" x="101" y="49" width="203" height="21"/>
+                                            <rect key="frame" x="101" y="43" width="117" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.73784066609729937" green="0.73331829600467058" blue="0.75678055323147209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wY-YE-6HU">
+                                            <rect key="frame" x="234" y="11" width="70" height="55"/>
+                                            <color key="backgroundColor" red="0.94901960780000005" green="0.90980392160000001" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="BLg-P2-9nK"/>
+                                                <constraint firstAttribute="height" constant="55" id="IDi-Q5-PXs"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lat: 48.1256 lon:12.3659" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="t0v-oQ-p6J">
+                                            <rect key="frame" x="176" y="67" width="128" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.73784066609999999" green="0.73331829599999998" blue="0.75678055320000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="SUM-Km-Rti" firstAttribute="leading" secondItem="u5b-6S-Ksa" secondAttribute="leading" constant="16" id="Q6s-KL-ii2"/>
+                                        <constraint firstItem="7wY-YE-6HU" firstAttribute="top" secondItem="u5b-6S-Ksa" secondAttribute="top" constant="11" id="fMx-5N-ESM"/>
                                         <constraint firstItem="SUM-Km-Rti" firstAttribute="top" secondItem="u5b-6S-Ksa" secondAttribute="top" constant="11" id="fsv-uj-dbC"/>
+                                        <constraint firstAttribute="trailing" secondItem="7wY-YE-6HU" secondAttribute="trailing" constant="16" id="nVI-j3-yw3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -192,7 +209,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4DU-hZ-kEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="-936"/>
+            <point key="canvasLocation" x="2032.5" y="-936.97183098591552"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8ih-H5-DQk">
